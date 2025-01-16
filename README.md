@@ -35,7 +35,7 @@ A calculadora de IMC permite ao usuário inserir seu peso e altura para calcular
 
 ## 🚀 Como Usar
 
-link : https://calculadoraimcproject.netlify.app/
+link : (https://calculadoraimcproject.netlify.app/)
 ## 📖 Como Funciona o Cálculo de IMC
 
 O IMC é calculado usando a fórmula:
