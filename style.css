@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "rubik", serif;
+
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, rgb(71, 69, 224), #0a0a97fd, #0f96be);
+}
+    h1{
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    
+}
+button{
+    background-color: rgb(26, 1, 255);
+    color: rgb(255,255,255);
+    border-radius: 15px;
+    border: none;
+    width: 10rem;
+    height: 2.3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    transition:transform 0.3s ease;
+
+}
+button:hover{
+    background-color: #020ebe;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0px 15px 20px #07335246;
+    transition-duration: 1s;
+}
+input{
+    background-color: transparent;
+    border-radius: 10px;
+    border: solid;
+    border-color: rgb(255, 255, 255);
+    
+    color: white;
+    width: 300px;
+    height: 50px;
+    padding: 0 1rem;
+    outline: none;
+
+}
+.no-spin::-webkit-inner-spin-button,
+.no-spin::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.no-spin[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.placeholder{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: rgb(250,250,250);
+    font-size: 1rem;
+    pointer-events: none;
+}
+input:focus~label,
+input:valid~label{
+    top: -2%;
+    font-size: 1rem;
+}
+label{
+    background-color:#0c0fa1;
+    border-radius: 30px;
+    color: rgb(245, 245, 247);
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: absolute;
+    padding: 0 5px;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 1em;
+    pointer-events: none;
+    transition: .3s;
+}
+.form-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top:20px;
+}
+#calculadora-imc{
+    background-color: #0c0ea19c;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+ }
+ #myform{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#resultado{
+    display: none;
+    color: white;
+    margin-top: 20px;
+    font-family: "Rubik", serif;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+#result-text{
+    text-align: left;
+}
+#resultado p{
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+ 
+ }
+ #resultado h2{
+    margin-bottom: 5px;
+}

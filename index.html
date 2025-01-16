@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Calculadora IMC</title>
+  </head>
+  <body>
+    <main id="calculadora-imc">
+      <header>
+        <h1>Calculadora IMC</h1>
+      </header>
+      <form id="myform">
+        <div class="form-content">
+          <input type="text" id="nome" required />
+          <label>nome</label>
+        </div>
+        <div class="form-content">
+          <input type="number" id="altura" class="no-spin" required />
+          <span class="placeholder">cm</span>
+          <label>altura</label>
+        </div>
+        <div class="form-content">
+          <input type="number" id="peso" class="no-spin" required />
+          <span class="placeholder">kg</span>
+          <label>peso</label>
+        </div>
+        <button type="submit">calcular</button>
+      </form>
+      <div id="resultado">
+        <button type="submit">calcular</button>
+      </div>
+    </main>
+    <script>
+      const formulario = document.getElementById("myform");
+      const resultadoDiv = document.getElementById("resultado");
+      const convert = 0.01;
+
+      function classificateIMC(imc) {
+        if (imc <= 19.1) {
+          return "Abaixo do peso";
+        } else if (imc >= 19.2 && imc < 25.8) {
+          return "Peso normal";
+        } else if (imc >= 25.8 && imc < 27.3) {
+          return "Obesidade grau I";
+        } else if (imc >= 27.3 && imc < 32.3) {
+          return "Obesidade grau II";
+        } else {
+          return "Sobrepeso";
+        }
+      }
+
+      formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("nome").value;
+        const height = parseFloat(document.getElementById("altura").value);
+        const weight = parseFloat(document.getElementById("peso").value);
+
+        const heightInMeters = height * convert;
+        const imc = weight / (heightInMeters * heightInMeters);
+        const classification = classificateIMC(imc);
+        formulario.style.display = "none";
+        resultadoDiv.style.display = "block";
+        resultadoDiv.innerHTML = `
+          <div id="result-text">
+          <h2>Resultado</h2>
+          <p>Nome: ${name}</p>
+          <p>IMC: ${imc.toFixed(2)}</p>
+          <p>Classificação: ${classification}</p>
+          </div>
+          <button type="button" onclick="window.location.reload();">Novo cálculo</button>
+        `;
+      });
+    </script>
+  </body>
+</html>
