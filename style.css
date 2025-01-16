@@ -137,3 +137,11 @@ label{
  #resultado h2{
     margin-bottom: 5px;
 }
+@media screen and (max-width: 574px) {
+    body{
+        background: linear-gradient(to bottom, rgb(4, 0, 255), #0a0a97fd, #1f1f1f);  
+    }
+    #calculadora-imc{
+        padding: 3rem;
+    }
+}
